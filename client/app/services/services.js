@@ -12,10 +12,12 @@ angular.module('shortly.services', [])
     });
   };
 
-  var postLink = function(){
+  var postLink = function(url){
+    console.log(url);
     return $http({
       method: 'POST',
       url: '/api/links',
+      data: {url: url},
     })
     .then (function(resp){
       return resp; 
