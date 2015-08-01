@@ -5,19 +5,16 @@
       <li><a href='#/shorten' class='create'>Shorten</a></li>
     </ul>
   </div>
-  <div id="create" ng-model=''>
-    <form name="urlForm" ng-submit='addLink(newUrl)'>
-      <input type='url' ng-model='newUrl' class='text' type='text' name='url' required>
-      <input type="submit" value="submit" />
-      <div role="alert">
-         <span class="error" ng-show="urlForm.input.$error.required">
-           Required!</span>
-         <span class="error" ng-show="urlForm.input.$error.url">
-           Not valid url!</span>
-       </div>
-    </form>
-    <div> {{ valid }} </div>
-  </div>
+  <form name="urlForm" ng-submit='addLink(newUrl)'>
+    <input type='url' ng-model='newUrl' class='text' type='text' name='url' required>
+    <input type="submit" value="submit" />
+    <div role="alert">
+       <span class="error" ng-show="urlForm.input.$error.required">
+         Required!</span>
+       <span class="error" ng-show="urlForm.input.$error.url">
+         Not valid url!</span>
+     </div>
+  </form>
 </div>
 
 
