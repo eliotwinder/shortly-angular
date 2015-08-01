@@ -1,15 +1,22 @@
-<div id='container'>
+<div id='container' ng-controller='ShortenController'>
   <div class='navigation'>
     <ul>
       <li><a href='#/links' class='index'>All Links</a></li>
       <li><a href='#/shorten' class='create'>Shorten</a></li>
     </ul>
   </div>
-  <div id="create">
+  <div id="create" ng-model=''>
     <form name="urlForm" ng-submit='addLink(newUrl)'>
-      <input ng-model='newUrl' class='text' type='text' name='url'>
+      <input type='url' ng-model='newUrl' class='text' type='text' name='url' required>
       <input type="submit" value="submit" />
+      <div role="alert">
+         <span class="error" ng-show="urlForm.input.$error.required">
+           Required!</span>
+         <span class="error" ng-show="urlForm.input.$error.url">
+           Not valid url!</span>
+       </div>
     </form>
+    <div> {{ valid }} </div>
   </div>
 </div>
 
